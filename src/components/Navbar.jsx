@@ -1,3 +1,4 @@
+import logo from "../assets/logoC.jpg"
 function Navbar() {
   return (
     <>
@@ -10,8 +11,8 @@ function Navbar() {
                 href="/index.html"
               >
                 <img
-                  className="h-10 w-auto"
-                  src="images/logo.png"
+                  className="h-10 w-10 rounded-full"
+                  src={logo}
                   alt="React Jobs"
                 />
                 <span className="hidden md:block text-white text-2xl font-bold ml-2">
