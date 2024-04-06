@@ -17,7 +17,7 @@ function Navbar() {
                   alt="React Jobs"
                 />
                 <span className="hidden md:block text-white text-2xl font-bold ml-2">
-                  React Jobs
+                  Cozy Jobs
                 </span>
               </Link>
               <div className="md:ml-auto">
