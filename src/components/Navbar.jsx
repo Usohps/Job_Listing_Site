@@ -33,7 +33,7 @@ function Navbar() {
                     Home
                   </NavLink>
                   <NavLink
-                    to="/jobs"
+                    to="/job"
                     className={({ isActive }) =>
                       isActive
                         ? "text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"

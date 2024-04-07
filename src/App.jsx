@@ -7,7 +7,7 @@ import {
 import Home from "./pages/Home";
 import MainLayout from "./layouts/MainLayout";
 import Jobspage from "./pages/Jobspage";
-// import AddJobs from "./pages/AddJobs";
+import AddJobs from "./pages/AddJobs";
 import PageNotFound from "./pages/PageNotFound";
 import JobDetails, { jobLoader } from "./pages/JobDetails";
 const App = () => {
@@ -15,9 +15,9 @@ const App = () => {
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
-        <Route path="/jobs" element={<Jobspage/>} />
-        <Route path="/jobs/:id" element={<JobDetails/>} loader={jobLoader}/>
-        {/* <Route path="/add-job" element={<AddJobs/>}/> */}
+        <Route path="/job" element={<Jobspage/>} />
+        <Route path="/job/:id" element={<JobDetails/>} loader={jobLoader}/>
+        <Route path="/add-job" element={<AddJobs/>}/>
         <Route path="*" element={<PageNotFound/>}/>
       </Route>
     )
