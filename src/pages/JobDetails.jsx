@@ -1,14 +1,24 @@
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
-import { useParams, useLoaderData, Link } from "react-router-dom";
-const JobDetails = () => {
+import { useParams, useLoaderData, Link, useNavigate } from "react-router-dom";
+const JobDetails = ({deleteJob}) => {
   const { id } = useParams();
   const job = useLoaderData();
+  const navigate = useNavigate()
+  const onDeleteClick = (jobId)=>{
+    const confirm = window.confirm("Are you sure you want to delete this job?")
+    if(!confirm){
+     return
+    }else{
+     deleteJob(jobId)
+     navigate("/job")
+    }
+  }
   return (
     <>
       <section>
         <div className="container m-auto py-6 px-6">
           <Link
-            to="/jobs"
+            to="/job"
             className="text-indigo-500 hover:text-indigo-600 flex items-center"
           >
             <FaArrowLeft className=" mr-2 mt-1" />
@@ -74,7 +84,7 @@ const JobDetails = () => {
                 >
                   Edit Job
                 </Link>
-                <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
+                <button onClick={()=> onDeleteClick(job.id)} className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block">
                   Delete Job
                 </button>
               </div>
