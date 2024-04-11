@@ -10,6 +10,7 @@ import Jobspage from "./pages/Jobspage";
 import AddJobs from "./pages/AddJobs";
 import PageNotFound from "./pages/PageNotFound";
 import JobDetails, { jobLoader } from "./pages/JobDetails";
+import EditPage from "./pages/EditPage";
 const App = () => {
 
   const addJob = async (newJob)=>{
@@ -35,6 +36,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/job" element={<Jobspage/>} />
         <Route path="/job/:id" element={<JobDetails deleteJob={deleteJob}/>} loader={jobLoader}/>
+        <Route path="/edit-job/:id" element={<EditPage/>} loader={jobLoader}/>
         <Route path="/add-job" element={<AddJobs addJobSubmit={addJob}/>}/>
         <Route path="*" element={<PageNotFound/>}/>
       </Route>
